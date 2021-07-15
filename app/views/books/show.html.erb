@@ -1,0 +1,15 @@
+<html>
+<h1>Book was successfully created.</h1>
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+<p>
+  <strong>Body</strong>
+  <%= @book.body %>
+</p>
+
+<span><%= link_to "Edit", books_path %></span>
+" | "
+<span><%= link_to "back", :back %></span>
+</html>
