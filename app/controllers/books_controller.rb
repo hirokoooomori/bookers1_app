@@ -10,18 +10,21 @@ class BooksController < ApplicationController
     @book.save
     redirect_to book_path(@book)
   end
-  
+
   def show
     @book =Book.find(params[:id])
   end
-  
+
   def edit
     @book = Book.find(params[:id])
   end
-  
+
   def destroy
     book = Book.find(params[:id])
-    book.destroy
+    if book.destroy
+      flash[:notice] = "File has been successfully deleted."
+      redirect_to books_path
+    end
   end
 
    private

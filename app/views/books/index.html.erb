@@ -12,19 +12,19 @@
   <% @books.each do |book| %>
   <tr>
     <td>
-      <span><%= book.title %></span>
+      <%= book.title %>
     </td>
     <td>
-      <span><%= book.body %></span>
+      <%= book.body %>
     </td>
     <td>
-      <span><%= link_to "Show", book_path(book) %></span>
+      <%= link_to "Show", book_path(book) %>
     </td>
     <td>
-      <span><%= link_to "Edit", edit_book_path(book) %></span>
+      <%= link_to "Edit", edit_book_path(book) %>
     </td>
     <td>
-      <span><%= link_to "Destroy", book_path(book),  method: :delete,"data-confirm", notice: "File has been successfully deleted." => "本当に削除しますか" %></span>
+      <%= link_to "Destroy", book_path(book),  method: :delete,"data-confirm" => "Are you sure you want to permanently delete this file ?" %>
     </td>
   </tr>
 </tbody>
