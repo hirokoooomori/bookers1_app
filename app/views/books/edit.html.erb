@@ -1,14 +1,15 @@
 <html>
   <h1>Editing Book</h1>
- 
+
   <%= form_with model: @book, url:book_path(@book), local:true do |f| %>
     <h2>Title:</h2>
     <%= f.text_field :title %>
     <h2>Body</h2>
     <%= f.text_field :body %>
+    <h2></h2>
     <%= f.submit 'Update Book' %>
   <% end %>
- 
+
 <%= link_to "Edit", books_path %>
 " | "
 <%= link_to "back", :back %>
