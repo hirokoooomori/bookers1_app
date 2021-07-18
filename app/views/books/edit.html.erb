@@ -1,6 +1,13 @@
 <html>
   <h1>Editing Book</h1>
 
+  <% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました
+  <% @book.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
   <%= form_with model: @book, url:book_path(@book), local:true do |f| %>
     <h2>Title:</h2>
     <%= f.text_field :title %>
